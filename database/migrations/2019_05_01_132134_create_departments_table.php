@@ -17,7 +17,8 @@ class CreateDepartmentsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->string('name');
-            $table->description('name');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 
