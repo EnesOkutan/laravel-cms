@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo("App\Department");
     }
+
+    public function managers()
+    {
+        return $this->hasMany('App\Manager');
+    }
 }
