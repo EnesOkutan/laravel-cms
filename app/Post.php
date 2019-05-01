@@ -15,4 +15,9 @@ class Post extends Model
     {
     	return $this->hasMany("App\Department");
     }
+
+    public function approvers()
+    {
+    	return $this->hasMany("App\Approver");
+    }
 }
