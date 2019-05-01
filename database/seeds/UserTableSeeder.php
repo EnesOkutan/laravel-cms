@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
         $admin->name = 'Admin';
         $admin->surname = 'Admin';
         $admin->email = 'admin@admin.com';
-        $admin->password = bcrypt('admin123');
+        $admin->password = Hash::make('admin123');
         $admin->role()->associate(Role::where('name','Admin')->first());
         $admin->department()->associate(Department::where('name','Genel')->first());
         $admin->save();
@@ -29,7 +29,7 @@ class UserTableSeeder extends Seeder
         $worker->name = 'Enes';
         $worker->surname = 'Okutan';
         $worker->email = 'enes@okutan.com';
-        $worker->password = bcrypt('enes123');
+        $worker->password = Hash::make('enes123');
         $worker->role()->associate(Role::where('name','worker')->first());
         $worker->department()->associate(Department::where('name','Teknoloji')->first());
         $worker->save();
@@ -38,7 +38,7 @@ class UserTableSeeder extends Seeder
         $chef->name = 'Ali';
         $chef->surname = "canik";
         $chef->email = 'ali@canik.com';
-        $chef->password = bcrypt('ali123');
+        $chef->password = Hash::make('ali123');
         $chef->role()->associate(Role::where('name','Department chef')->first());
         $chef->department()->associate(Department::where('name','Tarım')->first());
         $chef->save();
@@ -47,7 +47,7 @@ class UserTableSeeder extends Seeder
         $worker->name = 'Selim';
         $worker->surname = 'Güngör';
         $worker->email = 'selim@gungor.com';
-        $worker->password = bcrypt('selim123');
+        $worker->password = Hash::make('selim123');
         $worker->role()->associate(Role::where('name','Worker')->first());
         $worker->department()->associate(Department::where('name','Tekstil')->first());
         $worker->save();
