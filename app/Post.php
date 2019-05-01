@@ -10,4 +10,9 @@ class Post extends Model
     {
     	return $this->belongs("App\Post");
     }
+
+    public function department()
+    {
+    	return $this->hasMany("App\Department");
+    }
 }

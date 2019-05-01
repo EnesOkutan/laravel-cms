@@ -15,4 +15,9 @@ class Department extends Model
     {
     	return $this->hasMany("App\Manager");
     }
+
+    public function posts()
+    {
+    	return $this->hasMany("App\Post");
+    }
 }
