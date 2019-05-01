@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     pulic function posts()
     {
-        return $this->hasMany("App\User");
+        return $this->hasMany("App\Post");
     }
 
     public function department()

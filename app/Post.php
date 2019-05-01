@@ -8,12 +8,12 @@ class Post extends Model
 {
     public function user()
     {
-    	return $this->belongs("App\Post");
+    	return $this->belongsTo("App\User");
     }
 
     public function department()
     {
-    	return $this->hasMany("App\Department");
+    	return $this->belongsTo("App\Department");
     }
 
     public function approvers()
