@@ -17,13 +17,12 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('role_id');
             $table->string('name');
+            $table->string('surname');
             $table->string('username')->unique();
             $table->string('password');
             $table->unsignedInteger('department_id');
             $table->rememberToken();
             $table->timestamps();
-
-            //$table->foreign('role_id')->references('id')->on('roles');
         });
     }
 
