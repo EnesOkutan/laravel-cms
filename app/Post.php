@@ -8,6 +8,6 @@ class Post extends Model
 {
     public function user()
     {
-    	return $this->belongsTo("App\Post");
+    	return $this->belongs("App\Post");
     }
 }
