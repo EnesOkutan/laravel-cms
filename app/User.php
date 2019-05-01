@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Manager');
     }
+
+    public function approvers()
+    {
+        return $this->hasMany("App\Approver");
+    }
 }
