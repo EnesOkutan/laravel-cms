@@ -21,6 +21,9 @@
 				</div>
 			</div>
 			@endforeach
+			<div class="mx-auto" style="width: 200px;">
+				{!! $posts->links(); !!}
+			</div>
 		</div>
 	</div>
 </div>
