@@ -61,4 +61,11 @@ class User extends Authenticatable
     {
         return $this->hasMany("App\Approver");
     }
+
+    public function hasRole($role):bool
+    {
+        return (bool)$this->role()->where('name',$role)->first();
+    }
+
+
 }
