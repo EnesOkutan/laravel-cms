@@ -16,7 +16,7 @@ class CheckRole
     public function handle($request, Closure $next)
     {
         if($request->user()->hasRole('Worker')){
-            return redirect('/');
+            return redirect('/posts');
         }
 
         if($request->user()->hasRole('Department chef') || $request->user()->hasRole('Admin'))
