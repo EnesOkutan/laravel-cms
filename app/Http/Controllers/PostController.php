@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -11,9 +12,21 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+        if($request->user()->hasRole('Admin'))
+        {
+            $posts = new Post();
+        }
+        else
+        {
+            $posts = $request->user()->department()->first()->posts();
+        }
+
+        return view('landing',[
+            'posts' => $posts->latest()->paginate(5)
+        ]);
     }
 
     /**
@@ -78,6 +91,11 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function all()
     {
         //
     }
