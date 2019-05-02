@@ -13,9 +13,9 @@
 
 Route::get('/', function(){
 	return view('auth.login');
-});
+})->middleware('check.auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('check.role');
-Route::resource('posts','PostController');
+Route::resource('posts','PostController')->middleware('auth');
