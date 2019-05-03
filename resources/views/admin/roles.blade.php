@@ -10,11 +10,11 @@
     </tr>
   </thead>
   <tbody>
-  	@foreach($departments as $department)
+  	@foreach($roles as $role)
     <tr>
-      <th scope="row">{{ $department->id }}</th>
-      <td>{{ $department->name }}</td>
-      <td>{{ $department->description }}</td>
+      <th scope="row">{{ $role->id }}</th>
+      <td>{{ $role->name }}</td>
+      <td>{{ $role->description }}</td>
       <td colspan="2"><button type="button" class="btn btn-success mr-2">Düzenle</button><button type="button" class="btn btn-danger">Sil</button></td>
     </tr>
     @endforeach
