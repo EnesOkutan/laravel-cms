@@ -26,4 +26,7 @@
     @endforeach
   </tbody>
 </table>
+<div class="mx-auto" style="width: 200px;">
+  {!! $workers->links(); !!}  
+</div>
 @endsection

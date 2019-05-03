@@ -25,4 +25,7 @@
     @endforeach
   </tbody>
 </table>
+<div class="mx-auto" style="width: 200px;">
+  {!! $posts->links(); !!}  
+</div>
 @endsection

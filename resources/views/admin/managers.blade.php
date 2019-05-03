@@ -23,4 +23,7 @@
     @endforeach
   </tbody>
 </table>
+<div class="mx-auto" style="width: 200px;">
+  {!! $managers->links(); !!}  
+</div>
 @endsection

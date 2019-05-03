@@ -20,4 +20,7 @@
     @endforeach
   </tbody>
 </table>
+<div class="mx-auto" style="width: 200px;">
+  {!! $roles->links(); !!}  
+</div>
 @endsection
