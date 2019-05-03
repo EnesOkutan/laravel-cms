@@ -15,35 +15,35 @@ class AdminController extends Controller
     public function allPosts()
     {
     	return view('admin.posts',[
-    		'posts' => Post::latest()->paginate(10)
+    		'posts' => Post::orderBy('id','desc')->paginate(10)
     	]);
     }
 
     public function allDepartments()
     {
     	return view('admin.departments',[
-    		'departments' => Department::latest()->paginate(10)
+    		'departments' => Department::orderBy('id')->paginate(10)
     	]);
     }
 
     public function allManagers()
     {
     	return view('admin.managers',[
-    		'managers' => Manager::latest()->paginate(10)
+    		'managers' => Manager::orderBy('id')->paginate(10)
     	]);
     }
 
     public function allRoles()
     {
     	return view('admin.roles',[
-    		'roles' => Role::latest()->paginate(10)
+    		'roles' => Role::orderBy('id')->paginate(10)
     	]);
     }
 
     public function allWorkers()
     {
         return view('admin.workers',[
-            'workers' => User::latest()->paginate(10)
+            'workers' => User::orderBy('id')->paginate(10)
         ]);
     }
 }
