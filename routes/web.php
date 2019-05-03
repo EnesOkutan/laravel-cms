@@ -22,9 +22,9 @@ Route::resource('posts','PostController')->middleware('auth');
 Route::get('/admin/dashboard',function(){
 	return view('admin.dashboard');
 });
-Route::get('/admin/post','AdminController@allPosts');
+Route::get('/admin/posts','AdminController@allPosts');
 Route::get('/admin/departments','AdminController@allDepartments');
-Route::get('/admin/workers','AdminController@allWorkers');
 Route::get('/admin/managers','AdminController@allManagers');
 Route::get('/admin/roles','AdminController@allRoles');
+Route::get('/admin/workers','AdminController@allWorkers');
 
