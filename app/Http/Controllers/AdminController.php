@@ -8,10 +8,11 @@ use App\Department;
 use App\Worker;
 use App\Manager;
 use App\Role;
+use App\User;
 
 class AdminController extends Controller
 {
-    public function allPost()
+    public function allPosts()
     {
     	return view('admin.posts',[
     		'posts' => Post::latest()->paginate(10)
@@ -25,16 +26,9 @@ class AdminController extends Controller
     	]);
     }
 
-    public function allWorkers()
-    {
-    	return view('admin.managers',[
-    		'workers' => Worker::latest()->paginate(10)
-    	]);
-    }
-
     public function allManagers()
     {
-    	return view('admin.posts',[
+    	return view('admin.managers',[
     		'managers' => Manager::latest()->paginate(10)
     	]);
     }
@@ -42,7 +36,14 @@ class AdminController extends Controller
     public function allRoles()
     {
     	return view('admin.roles',[
-    		'posts' => Role::latest()->paginate(10)
+    		'roles' => Role::latest()->paginate(10)
     	]);
+    }
+
+    public function allWorkers()
+    {
+        return view('admin.workers',[
+            'workers' => User::latest()->paginate(10)
+        ]);
     }
 }
