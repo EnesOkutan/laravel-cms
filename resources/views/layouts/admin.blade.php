@@ -26,24 +26,24 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="{{ url('posts') }}">Home
                   <span class="sr-only">(current)</span>
                 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Posts</a>
+            <a class="nav-link" href="{{ url('admin/posts') }}">Posts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Departments</a>
+            <a class="nav-link" href="{{ url('admin/departments') }}">Departments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Workers</a>
+            <a class="nav-link" href="{{ url('admin/workers') }}">Workers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Managers</a>
+            <a class="nav-link" href="{{ url('admin/managers') }}">Managers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Roles</a>
+            <a class="nav-link" href="{{ url('admin/roles') }}">Roles</a>
           </li>
         </ul>
       </div>
