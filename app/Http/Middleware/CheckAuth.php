@@ -20,9 +20,7 @@ class CheckAuth
         {
             return redirect('posts');
         }
-        else
-        {
-            return $next($request);
-        }
+
+        return $next($request);
     }
 }
