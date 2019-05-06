@@ -58,4 +58,9 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getCreateDepartment(Request $request)
+    {
+        return view('admin.create.department');
+    }
+
 }
