@@ -15,7 +15,6 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
