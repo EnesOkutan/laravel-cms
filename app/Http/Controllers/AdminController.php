@@ -76,4 +76,12 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getCreateWorker(Request $request)
+    {
+        return view('admin.create.worker',[
+            'roles' => Role::all(),
+            'departments' => Department::all()
+        ]);
+    }
+
 }
