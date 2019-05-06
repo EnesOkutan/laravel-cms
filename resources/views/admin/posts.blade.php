@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-sm-12 py-3 text-right">
-  <button type="button" class="btn btn-outline-primary">New Post</button>
+  <a href="#" class="btn btn-outline-primary" role="button">New Post</a>
 </div>
 <table class="table table-hover">
   <thead>
@@ -21,8 +21,8 @@
       <td>{{ $post->department()->first()->name }}</td>
       <td>{{ $post->title }}</td>
       <td colspan="2">
-      	<button type="button" class="btn btn-success mr-2">Düzenle</button>
-      	<button type="button" class="btn btn-danger">Sil</button>
+      	<a href="#" class="btn btn-success mr-2" role="button">Düzenle</a>
+      	<a href="#" class="btn btn-danger" role="button">Sil</button>
       </td>
     </tr>
     @endforeach
