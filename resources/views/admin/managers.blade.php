@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+<div class="col-sm-12 py-3 text-right">
+  <button type="button" class="btn btn-outline-primary">New Manager</button>
+</div>
 <table class="table table-hover">
   <thead>
     <tr>
