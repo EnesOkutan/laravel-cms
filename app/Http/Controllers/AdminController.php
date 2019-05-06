@@ -9,6 +9,7 @@ use App\Worker;
 use App\Manager;
 use App\Role;
 use App\User;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -16,8 +17,23 @@ class AdminController extends Controller
 
     public function allPosts(Request $request)
     {
+        if($request->user()->hasRole('Admin'))
+        {
+            $posts = new Post();            
+        }
+        else
+        {
+            $managers = $request->user()->managers()->get();
+            $departments = [];
+            foreach($managers as $manager) 
+            {
+                array_push($departments, $manager->department_id);
+            }
+            $posts = Post::whereIn('department_id',$departments);
+        }
+
     	return view('admin.posts',[
-    		'posts' => Post::orderBy('id','desc')->paginate(10)
+    		'posts' => $posts->orderBy('id','desc')->paginate(10)
     	]);
     }
 
