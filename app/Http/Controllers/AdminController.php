@@ -12,6 +12,8 @@ use App\User;
 
 class AdminController extends Controller
 {
+    //All your records are taken and the related page is displayed.
+
     public function allPosts(Request $request)
     {
     	return view('admin.posts',[
@@ -46,4 +48,7 @@ class AdminController extends Controller
             'workers' => User::orderBy('id')->paginate(10)
         ]);
     }
+
+    //To add a record to the corresponding pages according to the route is being routed.
+
 }
