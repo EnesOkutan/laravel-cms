@@ -1,5 +1,7 @@
 <?php
 
+use App\Department;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,5 +33,12 @@ Route::middleware(['auth','check.manager'])->group(function(){
 	Route::get('/admin/managers','AdminController@allManagers');
 	Route::get('/admin/roles','AdminController@allRoles');
 	Route::get('/admin/workers','AdminController@allWorkers');
+
+	Route::get('/admin/create/post','AdminController@getCreatePost');
+	Route::get('/admin/create/department','AdminController@getCreateDepartment');
+	Route::get('/admin/create/manager','AdminController@getCreateManager');
+	Route::get('/admin/create/role','AdminController@getCreateRole');
+	Route::get('/admin/create/worker','AdminController@getCreateWorker');
+
 });
 
