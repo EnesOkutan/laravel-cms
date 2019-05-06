@@ -17,6 +17,10 @@ class AdminController extends Controller
 
     public function getRecordByRole($section, $column, $request)
     {
+        /*
+        *return the records in the user-managed department by selecting the $column in the $section table that refers to the department table.
+        */
+
         if($request->user()->hasRole('Admin'))
         {
             return $section;
