@@ -51,4 +51,11 @@ class AdminController extends Controller
 
     //To add a record to the corresponding pages according to the route is being routed.
 
+    public function getCreatePost(Request $request)
+    {
+        return view('admin.create.post',[
+            'departments' => Department::all()
+        ]);
+    }
+
 }
