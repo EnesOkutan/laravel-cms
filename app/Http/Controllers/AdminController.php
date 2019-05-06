@@ -15,22 +15,27 @@ class AdminController extends Controller
 {
     //All your records are taken and the related page is displayed.
 
-    public function allPosts(Request $request)
+    public function getRecordByRole($section, $column, $request)
     {
         if($request->user()->hasRole('Admin'))
         {
-            $posts = new Post();            
+            return $section;
         }
         else
         {
             $managers = $request->user()->managers()->get();
-            $departments = [];
-            foreach($managers as $manager) 
+            $array = [];
+            foreach ($managers as $manager)
             {
-                array_push($departments, $manager->department_id);
+                array_push($array, $manager->department_id);
             }
-            $posts = Post::whereIn('department_id',$departments);
+            return $section->whereIn($column,$array);
         }
+    }
+
+    public function allPosts(Request $request)
+    {   
+        $posts = $this->getRecordByRole(new Post, 'department_id', $request);
 
     	return view('admin.posts',[
     		'posts' => $posts->orderBy('id','desc')->paginate(10)
@@ -39,9 +44,11 @@ class AdminController extends Controller
 
     public function allDepartments(Request $request)
     {
-    	return view('admin.departments',[
-    		'departments' => Department::orderBy('id')->paginate(10)
-    	]);
+        $departments = $this->getRecordByRole(new Department, 'id', $request);
+
+        return view('admin.departments',[
+            'departments' => $departments->orderBy('id')->paginate(10)
+        ]);
     }
 
     public function allManagers(Request $request)
@@ -60,8 +67,10 @@ class AdminController extends Controller
 
     public function allWorkers(Request $request)
     {
+        $workers = $this->getRecordByRole(new User, 'department_id', $request);
+
         return view('admin.workers',[
-            'workers' => User::orderBy('id')->paginate(10)
+            'workers' => $workers->orderBy('id')->paginate(10)
         ]);
     }
 
