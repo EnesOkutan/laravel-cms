@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-sm-12 py-3 text-right">
-  <a href="#" class="btn btn-outline-primary" role="button">New Role</a>
+  <a href="{{ url('admin/create/role') }}" class="btn btn-outline-primary" role="button">New Role</a>
 </div>
 <table class="table table-hover">
   <thead>
