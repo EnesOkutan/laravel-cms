@@ -68,4 +68,12 @@ class AdminController extends Controller
         return view('admin.create.role');
     }
 
+    public function getCreateManager(Request $request)
+    {
+        return view('admin.create.manager',[
+            'users' => User::all(),
+            'departments' => Department::all()
+        ]);
+    }
+
 }
