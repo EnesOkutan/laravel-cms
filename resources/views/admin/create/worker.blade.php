@@ -13,9 +13,9 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="name" class="col-sm-2 col-form-label">Name:</label>
+    <label for="department" class="col-sm-2 col-form-label">Department:</label>
     <div class="col-sm-10">
-      <select name="department" class="form-control" id="departments">
+      <select name="department" class="form-control" id="department">
         <option>Select department</option>
         @foreach($departments as $department)
         <option value="{{ $department->id }}">{{ $department->name }}</option>
@@ -48,7 +48,7 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="completePassword" class="col-sm-2 col-form-label">complete password:</label>
+    <label for="completePassword" class="col-sm-2 col-form-label">Complete password:</label>
     <div class="col-sm-10">
       <input name="completePassword" type="password" class="form-control" id="completePassword" placeholder="Password complete">
     </div>
