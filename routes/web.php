@@ -40,11 +40,11 @@ Route::middleware(['auth','check.manager'])->group(function(){
 	Route::get('/admin/create/role','AdminController@getCreateRole');
 	Route::get('/admin/create/worker','AdminController@getCreateWorker');
 
-	Route::post('/admin/create/post','PostController@create');
-	Route::post('/admin/create/department','DepartmentController@create');
-	Route::post('/admin/create/manager','ManagerController@create');
-	Route::post('/admin/create/role','RoleController@create');
-	Route::post('/admin/create/worker','WorkerController@create');
+	Route::post('/admin/store/post','PostController@store');
+	Route::post('/admin/store/department','DepartmentController@store');
+	Route::post('/admin/store/manager','ManagerController@store');
+	Route::post('/admin/store/role','RoleController@store');
+	Route::post('/admin/store/worker','WorkerController@store');
 
 });
 
