@@ -13,5 +13,12 @@ class RoleController extends Controller
     		'name' => 'required|unique:roles',
     		'description' => 'required|max:255',
     	]);
+
+    	$role = new Role();
+    	$role->name = $request->name;
+    	$role->description = $request->description;
+    	$role->save();
+
+    	return redirect('/admin/roles');
     }
 }
