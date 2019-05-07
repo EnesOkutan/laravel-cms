@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<form class="py-5">
+<form class="py-5" action="{{ url('admin/create/department') }}" method="POST">
   <div class="form-group row">
     <label for="name" class="col-sm-2 col-form-label">Name:</label>
     <div class="col-sm-10">
