@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <form class="py-5" action="{{ url('admin/create/manager') }}" method="POST">
+  @csrf
   <div class="form-group row">
     <label for="users" class="col-sm-2 col-form-label">Users:</label>
     <div class="col-sm-10">
