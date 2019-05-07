@@ -9,8 +9,8 @@ class ManagerController extends Controller
     public function store(Request $request)
     {
     	$request->validate([
-    		'user' => 'require',
-    		'department' => 'require',
+    		'user' => 'required',
+    		'department' => 'required',
     	]);
     }
 }
