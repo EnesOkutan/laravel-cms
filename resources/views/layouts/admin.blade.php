@@ -38,12 +38,14 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/workers') }}">Workers</a>
           </li>
+          @if(Auth::user()->hasRole('Admin'))
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/managers') }}">Managers</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('admin/roles') }}">Roles</a>
           </li>
+          @endif
         </ul>
       </div>
     </div>
