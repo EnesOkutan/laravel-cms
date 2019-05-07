@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 @section('content')
+@if($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+      <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form class="py-5" method="POST" action="{{ url('admin/store/role') }}">
   @csrf
   <div class="form-group row">
